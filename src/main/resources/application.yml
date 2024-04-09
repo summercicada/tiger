@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: tiger
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      username: posgres
+      password: admin
+      schema: public
