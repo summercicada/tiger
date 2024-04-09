@@ -10,7 +10,10 @@ public class JWTUtil {
     private final static String tokenSecret = "1234123412341234123412341234123412341234123412341234123412341234";
 
     public static String createToken(UserJWT userJwt) {
-        return Jwts.builder().subject(userJwt.toJson()).signWith(Keys.hmacShaKeyFor(Decoders.BASE64.decode(tokenSecret))).compact();
+        return Jwts.builder()
+                .subject(userJwt.toJson())
+                .signWith(Keys.hmacShaKeyFor(Decoders.BASE64.decode(tokenSecret)))
+                .compact();
     }
 
 

@@ -10,6 +10,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ *  參考資料: https://medium.com/@yohanesdwikiwitman/spring-boot-3-template-part-4-configuring-spring-security-72572a60d18b
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
