@@ -6,31 +6,22 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- *  參考資料: https://medium.com/@yohanesdwikiwitman/spring-boot-3-template-part-4-configuring-spring-security-72572a60d18b
+ * 參考資料: https://medium.com/@yohanesdwikiwitman/spring-boot-3-template-part-4-configuring-spring-security-72572a60d18b
  */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfiguration {
 
-
-    /**
-     * 初始化 JWT 過濾器.
-     *
-     * @return
-     */
-    @Bean
-    public JWTFilter securityFilter() {
-        return new JWTFilter();
-    }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.httpBasic(basicConfigurer -> basicConfigurer.disable());
         httpSecurity.cors(Customizer.withDefaults());   //跨域設置 使用默認
 
         // csrf 攻擊
