@@ -37,6 +37,5 @@ public class JWTUtil {
 
     public static void main(String[] args) {
         System.out.println(createToken(UserJWT.builder().username("hello").build()));
-        System.out.println(JSON.toJson(enToken("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ7XCJ1c2VybmFtZVwiOlwiaGVsbG9cIn0iLCJ1c2VybmFtZSI6ImhhbnMgeGlhbyIsImFnZSI6MTAwLCJpYXQiOjE3MTI3NDExNDEsImV4cCI6MTcxMjc0MjU4MSwibmJmIjoxNzEyNzQxMTQxfQ.UA7qFEU7GQ_RaXwlzUfEEkGr_Jaookj62v8o8-2NA2otghqByg52jhkWDmYq7b4-CIZ3zviEb14c4WGkRGWQeg")));
     }
 }
